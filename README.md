@@ -77,6 +77,8 @@ The mode used is set in the **setTransaction()** call.
 - https://github.com/RobTillaart/FastShiftIn
 - https://github.com/RobTillaart/FastShiftInOut
 - https://github.com/RobTillaart/FastShiftOut
+- https://github.com/RobTillaart/ShiftInSlow
+- https://github.com/RobTillaart/ShiftOutSlow
 - https://github.com/RobTillaart/SWSPI
 - https://docs.arduino.cc/learn/communication/spi/
 - https://en.wikipedia.org/wiki/Serial_Peripheral_Interface
@@ -103,8 +105,10 @@ The mode used is set in the **setTransaction()** call.
   - bitOrder must be MSBFIRST or LSBFIRST
   - dataMode must be in range 0..3
 - **void endTransaction()**
-- **uint8_t transfer(uint8_t data)**
-- **uint16_t transfer16(uint16_t data)**
+- **uint8_t transfer(uint8_t data)** send one byte.
+- **uint16_t transfer16(uint16_t data)** send two bytes.
+- **uint32_t transfer24(uint32_t data)** send three bytes.
+- **uint32_t transfer32(uint32_t data)** send four bytes.
 - **void transfer(const void \*buf, size_t count)**
 
 

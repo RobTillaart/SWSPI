@@ -1,8 +1,21 @@
 //
-//    FILE: SWSPI_test.ino
+//    FILE: SWSPI_test_input.ino
 //  AUTHOR: Rob Tillaart
 // PURPOSE: test
 //     URL: https://github.com/RobTillaart/SWSPI
+//
+//  Connect pin 9 to 10 for easy test.
+/*
+SWSPI_LIB_VERSION: 0.1.1
+MODE 0
+AA
+MODE 1
+55
+MODE 2
+AA
+MODE 3
+55
+*/
 
 #include "SWSPI.h"
 
@@ -27,7 +40,7 @@ void setup()
   {
     myspi.beginTransaction(LSBFIRST, 0);
     digitalWrite(selectPin, LOW);
-    myspi.transfer("hello", 5);
+    Serial.println(myspi.transfer(0x55), HEX);
     digitalWrite(selectPin, HIGH);
     myspi.endTransaction();
   }
@@ -36,7 +49,7 @@ void setup()
   {
     myspi.beginTransaction(LSBFIRST, 1);
     digitalWrite(selectPin, LOW);
-    myspi.transfer("hello", 5);
+    Serial.println(myspi.transfer(0x55), HEX);
     digitalWrite(selectPin, HIGH);
     myspi.endTransaction();
   }
@@ -45,7 +58,7 @@ void setup()
   {
     myspi.beginTransaction(LSBFIRST, 2);
     digitalWrite(selectPin, LOW);
-    myspi.transfer("hello", 5);
+    Serial.println(myspi.transfer(0x55), HEX);
     digitalWrite(selectPin, HIGH);
     myspi.endTransaction();
   }
@@ -54,7 +67,7 @@ void setup()
   {
     myspi.beginTransaction(LSBFIRST, 3);
     digitalWrite(selectPin, LOW);
-    myspi.transfer("hello", 5);
+    Serial.println(myspi.transfer(0x55), HEX);
     digitalWrite(selectPin, HIGH);
     myspi.endTransaction();
   }
