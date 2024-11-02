@@ -106,10 +106,12 @@ The mode used is set in the **setTransaction()** call.
   - dataMode must be in range 0..3
 - **void endTransaction()**
 - **uint8_t transfer(uint8_t data)** send one byte.
+- **void transfer(const void \*buf, size_t count)**
 - **uint16_t transfer16(uint16_t data)** send two bytes.
+
+//  TO BE TESTED
 - **uint32_t transfer24(uint32_t data)** send three bytes.
 - **uint32_t transfer32(uint32_t data)** send four bytes.
-- **void transfer(const void \*buf, size_t count)**
 
 
 ## Future

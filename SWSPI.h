@@ -100,7 +100,7 @@ public:
     {
       _data = _bitReverse(data);
     }
-    //  noInterrupts
+
     if (_dataMode == 0)
     {
       //  SPI_MODE0
@@ -161,7 +161,6 @@ public:
         digitalWrite(_clock, HIGH);
       }
     }
-    //  interrupts();
     //  Serial.print("  ");
     return rv;
   };
